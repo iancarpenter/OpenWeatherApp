@@ -1,0 +1,46 @@
+<div class="container border border-secondary rounded bg-info text-white" id="container">
+  <div class="row">
+    <div class="col" id="location">
+      <h1>{{ openWeatherResponse.name }}</h1>
+    </div>
+  </div>
+  <div class="row text-right">
+    <div class="col" id="sunrisesunset">
+      <p><img [src]="riseIcon">{{ openWeatherResponse.sys.sunrise }} <img [src]="setIcon">{{ openWeatherResponse.sys.sunset }}</p>
+    </div>
+  </div>
+  <div class="row align-items-center">
+    <div class="col" id="icon">
+      <img class="mx-auto d-block" [src]="weatherIcon">
+    </div>
+    <div class="col" id="temp">
+      <p class="text-left">{{ openWeatherResponse.main.temp }}&#730;<span>C</span></p>
+    </div>
+  </div>
+  <table class="table table-borderless">
+    <thead>
+      <tr>
+        <th scope="col" width="25%">Min</th>
+        <th scope="col" width="25%">Max</th>
+        <th scope="col" width="25%">Feels like</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="text-white" id="ancillary-temp">
+        <td>{{ openWeatherResponse.main.temp_min }}&#730;<span>C</span></td>
+        <td>{{ openWeatherResponse.main.temp_max }}&#730;<span>C</span></td>
+        <td>{{ openWeatherResponse.main.feels_like }}&#730;<span>C</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="row text-right">
+    <div class="col" id="wind">
+      <p><span class="windBoilerplate">Wind speed: </span> {{ windSpeedInMPH }} <span class="windBoilerplate">mph, in a </span> {{  windDirection }} <span class="windBoilerplate"> direction</span></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col h2" id="desc">
+      <p>{{ openWeatherResponse.weather[0].description }}</p>
+    </div>
+  </div>
+</div>

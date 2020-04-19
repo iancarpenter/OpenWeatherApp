@@ -1,0 +1,25 @@
+@media (min-width: 570px) {
+  .container {
+    max-width: 570px;
+  }
+}
+
+#temp {
+    font-size: 4em;
+}
+
+#desc { 
+  text-transform: capitalize;
+}
+
+.table {
+  text-align: center;  
+}
+
+.table td, .table th {
+  padding: .0rem;
+}
+
+.windBoilerplate {
+    color: black;
+}
